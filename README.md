@@ -32,6 +32,16 @@ notebooks/                 Historical sources, kept unchanged
 5. **Training**: XGBoost with class weights and cycles C0–C3. Confidence thresholds are 0.85, 0.90, 0.95; pseudo-label weights are 0.30, 0.60, 0.45.
 6. **Prediction**: majority smoothing over window predictions, then mapping back to every test row. The saved model bundle includes feature order, room signatures, and label mapping.
 
+### Research framework
+
+The following figures were supplied with the paper. The first shows how augmented labeled data and pseudo-labeled data feed iterative training; the second shows the three retraining stages. They illustrate the paper's broader LODO study. The `train` command in this repository fits a final model on the supplied labeled and unlabeled data.
+
+![Paper figure showing data augmentation, feature extraction, pseudo-labeling, and cycle retraining](docs/assets/paper-framework.png)
+
+![Paper figure showing adaptation in C1, expansion in C2, and stabilization in C3](docs/assets/paper-cycle-retraining.png)
+
+The exact cycle thresholds and weights are in [research notes](docs/research.md), Table I.
+
 ### Physical layout
 
 Beacon IDs in `config/beacon_map.json` correspond to the numbered devices in the organizer's floor map. The geometry features use these positions.

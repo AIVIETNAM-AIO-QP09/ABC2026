@@ -2,6 +2,8 @@
 
 Source: *From Noisy Beacons to Precise Location: A Confidence-Guided Cycle Retraining Strategy*, supplied as `ABC_2026.pdf` with this project. The PDF is not committed to the repository.
 
+The author-supplied [overall training framework](assets/paper-framework.png) and [cycle retraining diagram](assets/paper-cycle-retraining.png) are embedded in both READMEs. They depict the research method, while `src/cgcr/` is the maintained implementation of the available final-training workflow.
+
 The paper studies BLE indoor location recognition across different collection days. Its CGCR method combines synthetic minority-class data, RSSI and spatial features, XGBoost, and iterative pseudo-labeling. The evaluation protocol is Leave-One-Day-Out (LODO) validation. The maintained package includes final training and inference, but the original cross-validation script and historical raw-to-wide notebook were not supplied.
 
 ## Cycle configuration (paper Table I)

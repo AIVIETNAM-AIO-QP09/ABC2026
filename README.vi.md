@@ -8,6 +8,16 @@ Repo này chuyển các notebook nghiên cứu cũ thành package Python có th�
 
 Phương pháp CGCR trong paper kết hợp dữ liệu tăng cường, đặc trưng tín hiệu và không gian, cùng pseudo-label có ngưỡng tin cậy tăng dần để xử lý tín hiệu BLE thay đổi giữa các ngày. [Ghi chú nghiên cứu](docs/research.md) phân biệt kết quả paper với những gì repo hiện tại đã kiểm chứng.
 
+## Phương pháp trong paper
+
+Hai hình dưới đây do bạn cung cấp từ paper: hình đầu mô tả luồng dữ liệu tăng cường, trích xuất đặc trưng và pseudo-label; hình sau giải thích ba giai đoạn retraining. Chúng minh họa thiết kế nghiên cứu LODO. Lệnh `train` trong repo huấn luyện model cuối trên dữ liệu có nhãn và chưa có nhãn được cung cấp.
+
+![Sơ đồ huấn luyện bán giám sát và retraining theo chu kỳ trong paper](docs/assets/paper-framework.png)
+
+![Ba chu kỳ thích nghi, mở rộng và ổn định của CGCR](docs/assets/paper-cycle-retraining.png)
+
+Ngưỡng tin cậy và trọng số chính xác của từng chu kỳ nằm trong [ghi chú nghiên cứu](docs/research.md), Bảng I.
+
 ## Bản đồ beacon và kết quả nghiên cứu
 
 Số beacon trong `config/beacon_map.json` khớp với vị trí đánh số trên sơ đồ tầng 5 của ban tổ chức:
