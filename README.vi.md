@@ -1,8 +1,24 @@
 # ABC 2026: Nhận diện vị trí trong nhà bằng BLE
 
+![Sơ đồ pipeline nhận diện vị trí từ tín hiệu BLE](docs/assets/pipeline.svg)
+
 [English](README.md) · [Sơ đồ hệ thống](docs/architecture.md) · [Chuẩn dữ liệu](docs/data-contract.md)
 
 Repo này chuyển các notebook nghiên cứu cũ thành package Python có thể chạy theo từng bước. Notebook gốc được giữ nguyên trong `notebooks/legacy/`; hai tutorial của ban tổ chức nằm trong `notebooks/organizer/`. Mã chạy chính nằm ở `src/cgcr/`.
+
+Phương pháp CGCR trong paper kết hợp dữ liệu tăng cường, đặc trưng tín hiệu và không gian, cùng pseudo-label có ngưỡng tin cậy tăng dần để xử lý tín hiệu BLE thay đổi giữa các ngày. [Ghi chú nghiên cứu](docs/research.md) phân biệt kết quả paper với những gì repo hiện tại đã kiểm chứng.
+
+## Bản đồ beacon và kết quả nghiên cứu
+
+Số beacon trong `config/beacon_map.json` khớp với vị trí đánh số trên sơ đồ tầng 5 của ban tổ chức:
+
+![Bản đồ tầng 5 với vị trí các beacon BLE](docs/floor-map-source.png)
+
+Biểu đồ dưới đây dùng số liệu **paper báo cáo**, được đánh giá theo Leave-One-Day-Out. Đây không phải kết quả đo lại từ code đã tái cấu trúc:
+
+![Macro F1 của bốn chu kỳ CGCR theo paper](docs/assets/paper-macro-f1.svg)
+
+Macro F1 tăng từ **0,5742 ở C0** lên **0,6220 ở C3**; paper báo cáo accuracy C3 là **0,7091** và weighted F1 là **0,7166**.
 
 ## Chạy từ dữ liệu gốc
 

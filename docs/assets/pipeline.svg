@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 390" role="img" aria-labelledby="title desc">
+  <title id="title">ABC 2026 BLE localization pipeline</title>
+  <desc id="desc">Raw BLE and room labels flow through beacon mapping, feature extraction, CGCR retraining, and room prediction.</desc>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1730"/>
+      <stop offset="1" stop-color="#14254b"/>
+    </linearGradient>
+    <linearGradient id="accent" x2="1">
+      <stop offset="0" stop-color="#39d6c4"/>
+      <stop offset="1" stop-color="#82a8ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="390" rx="26" fill="url(#bg)"/>
+  <circle cx="1080" cy="35" r="140" fill="#2c4480" opacity=".18"/>
+  <circle cx="70" cy="360" r="130" fill="#10bcae" opacity=".08"/>
+  <text x="52" y="72" fill="#ffffff" font-family="Arial, sans-serif" font-size="32" font-weight="700">From noisy beacons to precise location</text>
+  <text x="52" y="108" fill="#b7c7e8" font-family="Arial, sans-serif" font-size="17">ABC 2026  ·  Confidence-Guided Cycle Retraining</text>
+  <path d="M52 130 H1148" stroke="url(#accent)" stroke-width="2" opacity=".6"/>
+  <g font-family="Arial, sans-serif">
+    <rect x="52" y="165" width="200" height="150" rx="18" fill="#193459" stroke="#3d608e"/>
+    <circle cx="85" cy="202" r="12" fill="#39d6c4"/>
+    <text x="108" y="207" fill="#d6fff8" font-size="14" font-weight="700">01 / INPUT</text>
+    <text x="72" y="248" fill="#fff" font-size="20" font-weight="700">BLE + room labels</text>
+    <text x="72" y="279" fill="#c3d3ed" font-size="14">5M raw observations</text>
+
+    <rect x="276" y="165" width="200" height="150" rx="18" fill="#193459" stroke="#3d608e"/>
+    <circle cx="309" cy="202" r="12" fill="#52d9c9"/>
+    <text x="332" y="207" fill="#d6fff8" font-size="14" font-weight="700">02 / PREPARE</text>
+    <text x="296" y="248" fill="#fff" font-size="20" font-weight="700">25 beacon map</text>
+    <text x="296" y="279" fill="#c3d3ed" font-size="14">Labeled + unlabeled</text>
+
+    <rect x="500" y="165" width="200" height="150" rx="18" fill="#193459" stroke="#3d608e"/>
+    <circle cx="533" cy="202" r="12" fill="#69dccf"/>
+    <text x="556" y="207" fill="#d6fff8" font-size="14" font-weight="700">03 / FEATURES</text>
+    <text x="520" y="248" fill="#fff" font-size="20" font-weight="700">5-second windows</text>
+    <text x="520" y="279" fill="#c3d3ed" font-size="14">Signal + spatial context</text>
+
+    <rect x="724" y="165" width="200" height="150" rx="18" fill="#193459" stroke="#3d608e"/>
+    <circle cx="757" cy="202" r="12" fill="#82a8ff"/>
+    <text x="780" y="207" fill="#dfe7ff" font-size="14" font-weight="700">04 / LEARN</text>
+    <text x="744" y="248" fill="#fff" font-size="20" font-weight="700">CGCR: C0 → C3</text>
+    <text x="744" y="279" fill="#c3d3ed" font-size="14">Confidence-guided labels</text>
+
+    <rect x="948" y="165" width="200" height="150" rx="18" fill="#193459" stroke="#3d608e"/>
+    <circle cx="981" cy="202" r="12" fill="#9bb5ff"/>
+    <text x="1004" y="207" fill="#dfe7ff" font-size="14" font-weight="700">05 / OUTPUT</text>
+    <text x="968" y="248" fill="#fff" font-size="20" font-weight="700">Room prediction</text>
+    <text x="968" y="279" fill="#c3d3ed" font-size="14">Window + row results</text>
+  </g>
+  <g fill="none" stroke="#7cb9e2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M257 240 h13 m-6 -6 6 6 -6 6"/>
+    <path d="M481 240 h13 m-6 -6 6 6 -6 6"/>
+    <path d="M705 240 h13 m-6 -6 6 6 -6 6"/>
+    <path d="M929 240 h13 m-6 -6 6 6 -6 6"/>
+  </g>
+  <text x="52" y="358" fill="#92a9ce" font-family="Arial, sans-serif" font-size="13">Modular implementation in src/cgcr · Raw data and trained models stay outside Git</text>
+</svg>

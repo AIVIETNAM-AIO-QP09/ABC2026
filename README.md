@@ -1,11 +1,15 @@
 # ABC 2026 BLE indoor localization (CGCR)
 
+![Diagram of the ABC 2026 BLE localization pipeline](docs/assets/pipeline.svg)
+
 [Tiếng Việt](README.vi.md) · [Data contract](docs/data-contract.md) · [Architecture](docs/architecture.md) · [Migration notes](docs/migration.md)
 
 Code for the confidence-guided cycle retraining approach described in
 *From Noisy Beacons to Precise Location: A Confidence-Guided Cycle Retraining Strategy*.
 The original notebooks remain in `notebooks/legacy/` as historical research records; organizer tutorials are in `notebooks/organizer/`.
 The runnable package lives in `src/cgcr`.
+
+BLE RSSI varies across rooms and collection days. The method combines physically informed synthetic signals, spatial features, and confidence-filtered pseudo-labels so the classifier can adapt across days. The research paper evaluates this with Leave-One-Day-Out (LODO) validation; the code here provides a maintainable final-training pipeline. See [research notes](docs/research.md) for the distinction.
 
 ```text
 config/beacon_map.json     Exact organizer MAC-to-beacon mapping
@@ -27,6 +31,18 @@ notebooks/                 Historical sources, kept unchanged
 4. **Features**: five-second windows, room-signature cosine similarity, beacon differences, spatial centroid, and causal rolling context.
 5. **Training**: XGBoost with class weights and cycles C0–C3. Confidence thresholds are 0.85, 0.90, 0.95; pseudo-label weights are 0.30, 0.60, 0.45.
 6. **Prediction**: majority smoothing over window predictions, then mapping back to every test row. The saved model bundle includes feature order, room signatures, and label mapping.
+
+### Physical layout
+
+Beacon IDs in `config/beacon_map.json` correspond to the numbered devices in the organizer's floor map. The geometry features use these positions.
+
+![Organizer's fifth-floor map with numbered BLE beacons](docs/floor-map-source.png)
+
+### Results reported in the paper
+
+![Paper-reported Macro F1 scores for CGCR cycles C0 through C3 under LODO validation](docs/assets/paper-macro-f1.svg)
+
+Table II of the supplied paper reports Macro F1 rising from **0.5742 (C0)** to **0.6220 (C3)** under LODO validation. The C3 results reported there are **0.7091 accuracy** and **0.7166 weighted F1**. These are published experiment results, **not metrics reproduced by this refactored repository**; see [research notes](docs/research.md).
 
 ## Install and run
 

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 350" role="img" aria-labelledby="title desc">
+  <title id="title">Macro F1 by CGCR cycle as reported in the paper</title>
+  <desc id="desc">Under leave-one-day-out evaluation, paper-reported Macro F1 was 0.5742 for C0, 0.5848 for C1, 0.6131 for C2, and 0.6220 for C3.</desc>
+  <rect width="900" height="350" rx="20" fill="#f6f9ff"/>
+  <text x="42" y="54" fill="#152746" font-family="Arial, sans-serif" font-size="26" font-weight="700">Macro F1 across CGCR cycles</text>
+  <text x="42" y="84" fill="#526581" font-family="Arial, sans-serif" font-size="15">Reported in the paper · Leave-One-Day-Out evaluation · Table II</text>
+  <g font-family="Arial, sans-serif" font-size="17" font-weight="700" fill="#253954">
+    <text x="42" y="145">C0</text><text x="42" y="198">C1</text><text x="42" y="251">C2</text><text x="42" y="304">C3</text>
+  </g>
+  <g fill="#dfe8f5">
+    <rect x="105" y="122" width="630" height="30" rx="10"/>
+    <rect x="105" y="175" width="630" height="30" rx="10"/>
+    <rect x="105" y="228" width="630" height="30" rx="10"/>
+    <rect x="105" y="281" width="630" height="30" rx="10"/>
+  </g>
+  <g>
+    <rect x="105" y="122" width="462" height="30" rx="10" fill="#7b9cda"/>
+    <rect x="105" y="175" width="471" height="30" rx="10" fill="#638fdf"/>
+    <rect x="105" y="228" width="493" height="30" rx="10" fill="#397acb"/>
+    <rect x="105" y="281" width="501" height="30" rx="10" fill="#22a89a"/>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="17" font-weight="700" fill="#213654">
+    <text x="748" y="145">0.5742</text>
+    <text x="748" y="198">0.5848</text>
+    <text x="748" y="251">0.6131</text>
+    <text x="748" y="304">0.6220</text>
+  </g>
+</svg>
